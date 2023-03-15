@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">FOB_Demo</string>
+    <string name="log_in">log in</string>
+    <string name="register">Register</string>
+    <string name="user_name">username</string>
+    <string name="Password">Password</string>
+    <string name="Email">Email</string>
+    <string name="already_have_an_account">Already Have An Account?</string>
+    <string name="forget_password">forget Password?</string>
+    <string name="need_a_new_account">Need a New Account?</string>
+
+
+</resources>

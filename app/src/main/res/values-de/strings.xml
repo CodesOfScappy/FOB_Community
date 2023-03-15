@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">FOB_Demo</string>
+    <string name="log_in">Anmelden</string>
+    <string name="register">Registrieren</string>
+    <string name="user_name">Benutzername</string>
+    <string name="Password">Passwort</string>
+    <string name="Email">Mail Adresse</string>
+    <string name="already_have_an_account">Sie haben bereits ein Konto?</string>
+    <string name="forget_password">Password vergessen?</string>
+    <string name="need_a_new_account">Benötigen Sie ein neues Konto?</string>
+
+</resources>

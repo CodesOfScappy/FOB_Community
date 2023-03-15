@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "298628362273",
+    "project_id": "fob-demo-299b7",
+    "storage_bucket": "fob-demo-299b7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:298628362273:android:5fec642900b2f26b9af360",
+        "android_client_info": {
+          "package_name": "com.info.scappy.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "298628362273-p54pt0ru9s68diontooevgiqp8uppf0v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA_GfD8XQ8ibd97XbJ3f8Xr812KyZGWhhU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "298628362273-p54pt0ru9s68diontooevgiqp8uppf0v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
