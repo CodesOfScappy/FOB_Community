@@ -9,5 +9,12 @@
     <string name="already_have_an_account">Sie haben bereits ein Konto?</string>
     <string name="forget_password">Password vergessen?</string>
     <string name="need_a_new_account">Benötigen Sie ein neues Konto?</string>
+    <string name="password_recovery">Passwort Zurücksetzten</string>
+    <string name="attention_the_e_mail_address_must_match_the_registered_e_mail_address">Achtung, die E-Mail-Adresse muss mit der registrierten E-Mail-Adresse übereinstimmen.</string>
+    <string name="confirm">Bestätigen</string>
+    <string name="abort">Abbrechen</string>
+    <string name="send_email">Wir haben Ihnen Anweisungen zum Zurücksetzen Ihres Passworts gesendet!</string>
+    <string name="email_send_fail">E-Mail zum Zurücksetzen konnte nicht gesendet werden!</string>
+    <string name="error_text">Bitte geben Sie ihre E-Mail-Adresse ein</string>
 
 </resources>

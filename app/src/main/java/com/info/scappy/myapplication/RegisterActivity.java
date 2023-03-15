@@ -2,7 +2,9 @@ package com.info.scappy.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -12,7 +14,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     //UI-Elements
     EditText edUsername,edEmail,edPassword;
-    Button btnRegister,btnLogin;
+    Button btnRegister;
     TextView alreadyHaveAccountLink;
 
 
@@ -27,6 +29,16 @@ public class RegisterActivity extends AppCompatActivity {
         //Initialize UI-Elements
          InitializedFields();
 
+         alreadyHaveAccountLink.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View view) {
+                 startActivity(new Intent(RegisterActivity.this,LoginActivity.class));
+                 finish();
+             }
+         });
+
+
+
 
 
     }
@@ -39,7 +51,7 @@ public class RegisterActivity extends AppCompatActivity {
         edEmail = findViewById(R.id.edEmail);
         edPassword = findViewById(R.id.edPassword);
         btnRegister = findViewById(R.id.btn_register);
-        btnLogin = findViewById(R.id.btn_login);
+
         alreadyHaveAccountLink = findViewById(R.id.alreadyHaveAnAccountLink);
     }
 

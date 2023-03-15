@@ -89,7 +89,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:gravity="center"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="20dp"
         android:orientation="horizontal"
         tools:ignore="TextSizeCheck">
 
@@ -108,6 +108,7 @@
             android:id="@+id/alreadyHaveAnAccountLink"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:clickable="true"
             android:textColor="@color/teal_200"
             android:textStyle="bold"
             android:text="@string/log_in"/>

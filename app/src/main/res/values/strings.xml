@@ -8,6 +8,13 @@
     <string name="already_have_an_account">Already Have An Account?</string>
     <string name="forget_password">forget Password?</string>
     <string name="need_a_new_account">Need a New Account?</string>
+    <string name="password_recovery">Password Recovery</string>
+    <string name="attention_the_e_mail_address_must_match_the_registered_e_mail_address">Attention, the e-mail address must match the registered e-mail address.</string>
+    <string name="confirm">Confirm</string>
+    <string name="abort">abort</string>
+    <string name="send_email">We have send you instructions to reset your password!</string>
+    <string name="email_send_fail">Failed to send reset email!</string>
+    <string name="error_text">Please enter your email</string>
 
 
 </resources>

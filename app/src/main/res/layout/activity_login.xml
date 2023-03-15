@@ -21,7 +21,7 @@
         tools:ignore="HardcodedText" />
 
     <EditText
-        android:id="@+id/username"
+        android:id="@+id/edEmail"
         android:layout_width="340dp"
         android:layout_height="48dp"
         android:layout_marginTop="15dp"
@@ -29,10 +29,10 @@
         android:layout_marginEnd="15dp"
         android:textColorHint="@color/white"
         android:backgroundTint="@color/teal_700"
-        android:drawableStart="@drawable/ic_ed_username"
+        android:drawableStart="@drawable/ic_ed_email"
         android:drawablePadding="10dp"
-        android:hint="@string/user_name"
-        android:inputType="text"
+        android:hint="@string/Email"
+        android:inputType="textEmailAddress"
         android:padding="10dp"
         android:textColor="@color/white"
         tools:ignore="Autofill" />
@@ -59,13 +59,14 @@
     <TextView
         android:id="@+id/forget_password"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="49dp"
         android:clickable="true"
         android:textColor="@color/white"
         android:text="@string/forget_password"
         android:layout_marginEnd="40dp"
         android:layout_marginTop="5dp"
         android:layout_gravity="end"
+        android:gravity="center"
         app:drawableStartCompat="@drawable/ic_arrow_little_right" />
 
 
@@ -86,7 +87,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:gravity="center"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="20dp"
         android:orientation="horizontal"
         tools:ignore="TextSizeCheck">
 
@@ -105,6 +106,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textStyle="bold"
+            android:clickable="true"
             android:textColor="@color/teal_200"
             android:text="@string/register"/>
 
