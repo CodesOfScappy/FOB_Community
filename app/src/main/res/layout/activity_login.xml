@@ -71,7 +71,7 @@
 
 
     <Button
-        android:id="@+id/btn_login"
+        android:id="@+id/btn_loginActivity"
         android:layout_width="300dp"
         android:layout_gravity="center"
         android:layout_height="wrap_content"
@@ -111,6 +111,24 @@
             android:text="@string/register"/>
 
     </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="45dp"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:text="From"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/teal_200"
+        android:gravity="center"
+        android:text="FOB Community Edition"
+        tools:ignore="HardcodedText" />
 
 
 

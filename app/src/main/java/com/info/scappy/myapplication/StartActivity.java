@@ -7,11 +7,29 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 
 public class StartActivity extends AppCompatActivity {
 
-    Button btnRegister, btnLogin;
+    Button btn_RegisterStartActivity, btn_LoginStartActivity;
+    FirebaseUser firebaseUser;
+
+
+
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        // Check if user is already logged in
+        if (firebaseUser != null) {
+            startActivity(new Intent(StartActivity.this, MainActivity.class));
+            finish();
+        }
+    }
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,8 +39,11 @@ public class StartActivity extends AppCompatActivity {
         // Initialize fields here
         InitializedFields();
 
+        // Check if user is already logged in
+        firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
 
-        btnLogin.setOnClickListener(new View.OnClickListener() {
+
+        btn_LoginStartActivity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -31,7 +52,7 @@ public class StartActivity extends AppCompatActivity {
             }
         });
 
-        btnRegister.setOnClickListener(new View.OnClickListener() {
+       btn_RegisterStartActivity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -47,7 +68,8 @@ public class StartActivity extends AppCompatActivity {
 
     //Methode to initialize UI-Elements
     private void InitializedFields() {
-        btnRegister = findViewById(R.id.btn_register);
-        btnLogin = findViewById(R.id.btn_login);
+
+            btn_LoginStartActivity = findViewById(R.id.btn_loginStartActivity);
+            btn_RegisterStartActivity = findViewById(R.id.btn_registerActivity);
     }
 }

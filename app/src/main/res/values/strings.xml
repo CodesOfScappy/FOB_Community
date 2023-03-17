@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">FOB_Demo</string>
-    <string name="log_in">log in</string>
+    <string name="log_in">Log In</string>
     <string name="register">Register</string>
-    <string name="user_name">username</string>
+    <string name="user_name">Username</string>
     <string name="Password">Password</string>
     <string name="Email">Email</string>
     <string name="already_have_an_account">Already Have An Account?</string>
@@ -11,10 +11,23 @@
     <string name="password_recovery">Password Recovery</string>
     <string name="attention_the_e_mail_address_must_match_the_registered_e_mail_address">Attention, the e-mail address must match the registered e-mail address.</string>
     <string name="confirm">Confirm</string>
-    <string name="abort">abort</string>
+    <string name="abort">Abort</string>
     <string name="send_email">We have send you instructions to reset your password!</string>
     <string name="email_send_fail">Failed to send reset email!</string>
     <string name="error_text">Please enter your email</string>
+    <string name="full_name">Full name</string>
+    <string name="account_creating">Creating Account</string>
+    <string name="please_wait_creating_account">Please wait, while we are creating your account...</string>
+    <string name="fill_all_fields">All Fields are Required!</string>
+    <string name="password_must_be_at_least_6_characters">Password must be least 6 characters</string>
+    <string name="account_created_successfully">Account created Successfully</string>
+    <string name="account_creation_failed">Account creation Failed</string>
+    <string name="you_not_register">You are NOT Register with Email and Password!</string>
+    <string name="login_progress">Login Progress</string>
+    <string name="login_progress_message">please wait....</string>
+    <string name="authentication_fail">Authentication Failed!</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>

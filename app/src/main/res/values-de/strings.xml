@@ -16,5 +16,16 @@
     <string name="send_email">Wir haben Ihnen Anweisungen zum Zurücksetzen Ihres Passworts gesendet!</string>
     <string name="email_send_fail">E-Mail zum Zurücksetzen konnte nicht gesendet werden!</string>
     <string name="error_text">Bitte geben Sie ihre E-Mail-Adresse ein</string>
+    <string name="full_name">Vor-Nachname</string>
+    <string name="account_creating">Account erstellen</string>
+    <string name="please_wait_creating_account">Bitte warten Sie, während wir Ihr Konto erstellen…</string>
+    <string name="fill_all_fields">Alle Felder sind erforderlich!</string>
+    <string name="password_must_be_at_least_6_characters">Das Passwort muss mindestens aus 6 Zeichen bestehen</string>
+    <string name="account_created_successfully">Konto erfolgreich erstellt</string>
+    <string name="account_creation_failed">Kontoerstellung fehlgeschlagen</string>
+    <string name="you_not_register">Sie registrieren sich NICHT mit E-Mail und Passwort!</string>
+    <string name="login_progress">Login-Fortschritt</string>
+    <string name="login_progress_message">Bitte warten....</string>
+    <string name="authentication_fail">Authentifizierung fehlgeschlagen!</string>
 
 </resources>
