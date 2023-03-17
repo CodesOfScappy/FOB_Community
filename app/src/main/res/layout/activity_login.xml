@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:padding="10dp"
     android:background="@color/black"
-    tools:context=".LoginActivity">
+    tools:context=".Start.Authentication.LoginActivity">
 
 
 

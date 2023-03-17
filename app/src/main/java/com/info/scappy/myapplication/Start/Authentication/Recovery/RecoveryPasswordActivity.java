@@ -1,4 +1,4 @@
-package com.info.scappy.myapplication;
+package com.info.scappy.myapplication.Start.Authentication.Recovery;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,6 +13,8 @@ import android.widget.Toast;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.info.scappy.myapplication.R;
+import com.info.scappy.myapplication.Start.Authentication.LoginActivity;
 
 public class RecoveryPasswordActivity extends AppCompatActivity {
 
@@ -35,7 +37,7 @@ public class RecoveryPasswordActivity extends AppCompatActivity {
         btn_Cancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(RecoveryPasswordActivity.this,LoginActivity.class));
+                startActivity(new Intent(RecoveryPasswordActivity.this, LoginActivity.class));
                 finish();
             }
         });

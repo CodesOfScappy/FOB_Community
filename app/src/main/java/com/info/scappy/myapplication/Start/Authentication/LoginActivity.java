@@ -1,4 +1,4 @@
-package com.info.scappy.myapplication;
+package com.info.scappy.myapplication.Start.Authentication;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -7,7 +7,6 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -23,6 +22,9 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.info.scappy.myapplication.MainActivity;
+import com.info.scappy.myapplication.R;
+import com.info.scappy.myapplication.Start.Authentication.Recovery.RecoveryPasswordActivity;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -55,7 +57,7 @@ public class LoginActivity extends AppCompatActivity {
         needNewAccountLink.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(LoginActivity.this,RegisterActivity.class));
+                startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
                 finish();
             }
         });
@@ -64,7 +66,7 @@ public class LoginActivity extends AppCompatActivity {
         forgetPassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               startActivity(new Intent(LoginActivity.this,RecoveryPasswordActivity.class));
+               startActivity(new Intent(LoginActivity.this, RecoveryPasswordActivity.class));
                     finish();
             }
         });
@@ -108,7 +110,7 @@ public class LoginActivity extends AppCompatActivity {
                                         //Hide progress dialog
                                         progressDialog.dismiss();
                                         // User is logged in successfully and go to main activity
-                                        Intent intent = new Intent(LoginActivity.this,MainActivity.class);
+                                        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                                         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                                         startActivity(intent);
                                         finish();

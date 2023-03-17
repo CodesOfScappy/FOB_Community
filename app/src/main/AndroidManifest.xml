@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <!-- TODO: Access to the internet -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -15,16 +19,16 @@
             android:name=".PostActivity"
             android:exported="false" />
         <activity
-            android:name=".RecoveryPasswordActivity"
+            android:name=".Start.Authentication.Recovery.RecoveryPasswordActivity"
             android:exported="true" />
         <activity
             android:name=".MainActivity"
             android:exported="false" />
         <activity
-            android:name=".RegisterActivity"
+            android:name=".Start.Authentication.RegisterActivity"
             android:exported="true" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".Start.Authentication.LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -33,7 +37,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".StartActivity"
+            android:name=".Start.StartActivity"
             android:exported="true" />
     </application>
 

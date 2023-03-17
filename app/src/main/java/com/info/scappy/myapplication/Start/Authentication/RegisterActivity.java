@@ -1,4 +1,4 @@
-package com.info.scappy.myapplication;
+package com.info.scappy.myapplication.Start.Authentication;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,6 +19,8 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.info.scappy.myapplication.MainActivity;
+import com.info.scappy.myapplication.R;
 
 import java.util.HashMap;
 

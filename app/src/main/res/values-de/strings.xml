@@ -27,5 +27,8 @@
     <string name="login_progress">Login-Fortschritt</string>
     <string name="login_progress_message">Bitte warten....</string>
     <string name="authentication_fail">Authentifizierung fehlgeschlagen!</string>
+    <string name="username">Benutzername</string>
+    <string name="post">POST</string>
+    <string name="image_description">Beschreibung</string>
 
 </resources>
