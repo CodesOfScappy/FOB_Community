@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".PostActivity">
+    tools:context=".Activitys.PostActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/bar"
@@ -63,7 +63,7 @@
             android:layout_height="200dp"
             android:scaleType="centerInside"
             android:layout_gravity="center"
-            android:src="@drawable/errorImage"
+            android:src="@drawable/errorimage"
             android:contentDescription="posting Image"
             tools:ignore="HardcodedText" />
         
@@ -76,6 +76,8 @@
             android:textColorHint="#737070"
             android:hint="@string/image_description"
             android:importantForAutofill="no" />
+
+
 
 
 

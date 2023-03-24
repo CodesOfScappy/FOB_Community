@@ -1,4 +1,4 @@
-package com.info.scappy.myapplication;
+package com.info.scappy.myapplication.Activitys;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,6 +15,7 @@ import com.info.scappy.myapplication.Fragments.HomeFragment;
 import com.info.scappy.myapplication.Fragments.NotificationFragment;
 import com.info.scappy.myapplication.Fragments.ProfileFragment;
 import com.info.scappy.myapplication.Fragments.SearchFragment;
+import com.info.scappy.myapplication.R;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -25,11 +26,38 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //set status bar color
+        getWindow().setStatusBarColor(getResources().getColor(R.color.black));
 
 
 
         bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setOnNavigationItemReselectedListener(navigationItemSelectedListener);
+
+        // Get the data from the intent
+        Bundle intent = getIntent().getExtras();
+
+        // Check if the intent is not null
+        if (intent != null)
+        {
+            String publisher = intent.getString("publisherid");
+            SharedPreferences.Editor editor = getSharedPreferences("PREFS", MODE_PRIVATE).edit();
+            editor.putString("profileid", publisher);
+            editor.apply();
+
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new ProfileFragment()).commit();
+
+        }
+        else
+        {
+            // Set the default fragment to HomeFragment
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HomeFragment()).commit();
+        }
+
+
+
+
+
 
         // Set the default fragment to HomeFragment
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HomeFragment()).commit();

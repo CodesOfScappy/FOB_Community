@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-
     <!-- TODO: Access to the internet -->
     <uses-permission android:name="android.permission.INTERNET" />
-
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
 
     <application
         android:allowBackup="true"
@@ -16,14 +18,35 @@
         android:theme="@style/Theme.FOB_Demo"
         tools:targetApi="31">
         <activity
-            android:name=".PostActivity"
+            android:name=".Activitys.StoryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activitys.AddStoryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activitys.OptionsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activitys.FollowersActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activitys.EditProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activitys.CommentsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activitys.PostActivity"
             android:exported="false" />
         <activity
             android:name=".Start.Authentication.Recovery.RecoveryPasswordActivity"
             android:exported="true" />
         <activity
-            android:name=".MainActivity"
-            android:exported="false" />
+            android:name=".Activitys.MainActivity"
+            android:exported="false" /> <!-- TODO: CropImageActivity -->
+        <activity
+            android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
+            android:theme="@style/Base.Theme.AppCompat" />
         <activity
             android:name=".Start.Authentication.RegisterActivity"
             android:exported="true" />

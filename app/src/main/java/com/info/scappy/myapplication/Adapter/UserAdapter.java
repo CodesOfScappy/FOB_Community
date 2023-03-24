@@ -1,6 +1,7 @@
 package com.info.scappy.myapplication.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,10 +21,12 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.info.scappy.myapplication.Activitys.MainActivity;
 import com.info.scappy.myapplication.Fragments.ProfileFragment;
 import com.info.scappy.myapplication.Models.User;
 import com.info.scappy.myapplication.R;
 
+import java.util.HashMap;
 import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -36,9 +39,14 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
 
     FirebaseUser firebaseUser;
 
-    public UserAdapter(Context mContext, List<User> mUsers) {
+
+    private Boolean isFragments;
+
+
+    public UserAdapter(Context mContext, List<User> mUsers, boolean isFragments) {
         this.mContext = mContext;
         this.mUsers = mUsers;
+        this.isFragments = isFragments;
     }
 
     @NonNull
@@ -78,41 +86,73 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
             @Override
             public void onClick(View v)
             {
-                SharedPreferences.Editor editor = mContext.getSharedPreferences("PREFS", Context.MODE_PRIVATE).edit();
-                editor.putString("profileid", user.getId());
-                editor.apply();
+                if (isFragments) {
 
-                ((FragmentActivity)mContext).getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new ProfileFragment()).commit();
+                    SharedPreferences.Editor editor = mContext.getSharedPreferences("PREFS", Context.MODE_PRIVATE).edit();
+                    editor.putString("profileid", user.getId());
+                    editor.apply();
+
+                    ((FragmentActivity) mContext).getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                            new ProfileFragment()).commit();
+
+                }
+                else
+                {
+                    // Start the main activity and pass the user id of the user to be displayed
+                    Intent intent = new Intent(mContext, MainActivity.class);
+                    intent.putExtra("publisherid", user.getId());
+                    mContext.startActivity(intent);
+                }
             }
         });
 
         // Add a click listener to the follow button
-        holder.btn_follow.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v)
+        holder.btn_follow.setOnClickListener(v -> {
+            if (holder.btn_follow.getText().toString().equals("follow"))
             {
-                if (holder.btn_follow.getText().toString().equals("follow"))
-                {
-                    FirebaseDatabase.getInstance().getReference().child("Follow").child(firebaseUser.getUid())
-                            .child("following").child(user.getId()).setValue(true);
+                FirebaseDatabase.getInstance().getReference().child("Follow").child(firebaseUser.getUid())
+                        .child("following").child(user.getId()).setValue(true);
 
-                    FirebaseDatabase.getInstance().getReference().child("Follow").child(user.getId())
-                            .child("followers").child(firebaseUser.getUid()).setValue(true);
-                }
-                else
-                {
-                    FirebaseDatabase.getInstance().getReference().child("Follow").child(firebaseUser.getUid())
-                            .child("following").child(user.getId()).removeValue();
 
-                    FirebaseDatabase.getInstance().getReference().child("Follow").child(user.getId())
-                            .child("followers").child(firebaseUser.getUid()).removeValue();
-                }
+
+                FirebaseDatabase.getInstance().getReference().child("Follow").child(user.getId())
+                        .child("followers").child(firebaseUser.getUid()).setValue(true);
+
+
+                addNotification(user.getId());
+
+
+
+            }
+            else
+            {
+                FirebaseDatabase.getInstance().getReference().child("Follow").child(firebaseUser.getUid())
+                        .child("following").child(user.getId()).removeValue();
+
+
+
+                FirebaseDatabase.getInstance().getReference().child("Follow").child(user.getId())
+                        .child("followers").child(firebaseUser.getUid()).removeValue();
             }
         });
 
 
     }
+
+    private void addNotification(String userid)
+    {
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Notifications").child(userid);
+
+        HashMap<String, Object> hashMap = new HashMap<>();
+        hashMap.put("userid", firebaseUser.getUid());
+        hashMap.put("text", mContext.getString(R.string.follow_you_now));
+        hashMap.put("postid", "");
+        hashMap.put("ispost", false);
+
+        reference.push().setValue(hashMap);
+    }
+
+
 
     @Override
     public int getItemCount() {

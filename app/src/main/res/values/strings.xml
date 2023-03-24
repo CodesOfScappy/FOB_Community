@@ -30,6 +30,29 @@
     <string name="username">username</string>
     <string name="post">POST</string>
     <string name="image_description">Description</string>
+    <string name="something_wrong">Something gone wrong!</string>
+    <string name="failed">Failed!</string>
+    <string name="no_image_selected">No image Selected!</string>
+    <string name="view_all_20_comments">View all 20 Comments</string>
+    <string name="add_a_comment">Add a Comment…</string>
+    <string name="empty_comments_error">You can not send empty comments</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
+    <string name="photos">Photos</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="save">Save</string>
+    <string name="change_photo">Change Photo</string>
+    <string name="description">Description</string>
+    <string name="notifications">Notifications</string>
+    <string name="comments">commented: "</string>
+    <string name="comment">Comments</string>
+    <string name="commeded">\"Commented: \"</string>
+    <string name="follow_you_now">started following you</string>
+    <string name="start_follow_you_now">started following you</string>
+    <string name="settings">Settings</string>
+    <string name="log_out">Log Out</string>
+    <string name="something_went_wrong">something went wrong</string>
+    <string name="delete">Deleted!</string>
 
 
 </resources>

@@ -9,7 +9,7 @@ import android.widget.Button;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.info.scappy.myapplication.MainActivity;
+import com.info.scappy.myapplication.Activitys.MainActivity;
 import com.info.scappy.myapplication.R;
 import com.info.scappy.myapplication.Start.Authentication.LoginActivity;
 import com.info.scappy.myapplication.Start.Authentication.RegisterActivity;

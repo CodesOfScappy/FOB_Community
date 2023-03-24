@@ -19,7 +19,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.info.scappy.myapplication.MainActivity;
+import com.info.scappy.myapplication.Activitys.MainActivity;
 import com.info.scappy.myapplication.R;
 
 import java.util.HashMap;
@@ -125,6 +125,7 @@ public class RegisterActivity extends AppCompatActivity {
                         //Create a Hashmap to store the User Data
                         HashMap<String, Object> hashMap = new HashMap<>();
                         hashMap.put("id", userId);
+                        hashMap.put("email", email);
                         hashMap.put("username", username.toLowerCase());
                         hashMap.put("fullname", fullname);
                         hashMap.put("bio", "");

@@ -17,12 +17,13 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.info.scappy.myapplication.MainActivity;
+import com.info.scappy.myapplication.Activitys.MainActivity;
 import com.info.scappy.myapplication.R;
 import com.info.scappy.myapplication.Start.Authentication.Recovery.RecoveryPasswordActivity;
 
@@ -36,8 +37,7 @@ public class LoginActivity extends AppCompatActivity {
 
     //Firebase Elements
     FirebaseAuth mAuth;
-
-
+    FirebaseUser currentUser;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,6 +51,7 @@ public class LoginActivity extends AppCompatActivity {
 
         //Initialize Firebase Elements
         mAuth = FirebaseAuth.getInstance();
+        currentUser = mAuth.getCurrentUser();
 
 
         // User has already an account and want to login
@@ -154,5 +155,20 @@ public class LoginActivity extends AppCompatActivity {
         forgetPassword = findViewById(R.id.forget_password);
         btnLoginActivity = findViewById(R.id.btn_loginActivity);
         needNewAccountLink = findViewById(R.id.needNewAccountLink);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        //Check if user is already logged in
+        if (currentUser != null)
+        {
+            //User is logged in and go to main activity
+            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(intent);
+            finish();
+        }
     }
 }
